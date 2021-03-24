@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "284158134291",
+    "project_id": "socialmediaintegration-71a54",
+    "storage_bucket": "socialmediaintegration-71a54.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:284158134291:android:a3d541006849c0afa397e6",
+        "android_client_info": {
+          "package_name": "com.rhea.socialmediainteractions"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "284158134291-8seg9qth7qckc6abppqhl325lcm2ceuo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rhea.socialmediainteractions",
+            "certificate_hash": "c6bcf4a4da64967723bd6a2baa998df56db0f53a"
+          }
+        },
+        {
+          "client_id": "284158134291-fj2soo9f779qd4mjagaqo6tph1frsg7s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rhea.socialmediainteractions",
+            "certificate_hash": "990810ec92c2ca555c2e8a0c265b48faea9655f2"
+          }
+        },
+        {
+          "client_id": "284158134291-m7ucqr34pu40m1hj6qfmnu1u4pvsbbc3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtG6gp5S_cNVzXXrMJ-5d0nVBxkJWCe0w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "284158134291-m7ucqr34pu40m1hj6qfmnu1u4pvsbbc3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
