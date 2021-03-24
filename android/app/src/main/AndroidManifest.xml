@@ -40,7 +40,7 @@
                 <!-- Accepts URIs that begin with YOUR_SCHEME://YOUR_HOST -->
                 <data
                     android:scheme="https"
-                    android:host="https://socialmediaintegration-71a54.firebaseapp.com" />
+                    android:host="socialmediaintegration-71a54.firebaseapp.com" />
             </intent-filter>
 
         </activity>
@@ -69,7 +69,7 @@
 
 
     </application>
-
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"/>
     <uses-permission android:name="android.permission.INTERNET"/>
 
 </manifest>

@@ -47,13 +47,15 @@ class _HomeScreenState extends State<HomeScreen> {
             child: StreamBuilder<User>(
                 stream: authBloc.currentUser,
                 builder: (context, snapshot) {
-                  // print("SNAPSHOT RHEA"+snapshot.data.providerData[0].providerId.toString());
+                  print("SNAPSHOT RHEA"+snapshot.toString());
                   if (!snapshot.hasData) return CircularProgressIndicator();
                   print(snapshot.data.photoURL);
                   return Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text(snapshot.data.displayName,style:TextStyle(fontSize: 35.0)),
+                      Text(snapshot.data.providerData[0].displayName == null ? "":snapshot.data.providerData[0].displayName,style:TextStyle(fontSize: 35.0,color: Colors.white)),
+                      SizedBox(height: 20.0,),
+                      Text(snapshot.data.email == null ? "":snapshot.data.email,style:TextStyle(fontSize: 20.0,color: Colors.white)),
                       SizedBox(height: 20.0,),
                       CircleAvatar(
                         backgroundImage: NetworkImage(snapshot.data.photoURL.replaceFirst('s96','s400')),
@@ -73,7 +75,13 @@ class _HomeScreenState extends State<HomeScreen> {
                     text: 'Sign Out of Google',
                     onPressed: () => authBloc.logout()
                     ),
+                    if(snapshot.data.providerData[0].providerId.toString()=='github.com')
+                      SignInButton(
+                          Buttons.GitHub,
+                          text: 'Sign Out of Github',
 
+                          onPressed: () => authBloc.logout()
+                      ),
                   ],)
 
 

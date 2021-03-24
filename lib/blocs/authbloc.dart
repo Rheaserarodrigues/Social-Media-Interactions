@@ -100,6 +100,7 @@ class AuthBloc {
     String CLIENT_ID = "4deda9a7a0d24473cf44";
     String CLIENT_SECRET = "705393323712a87724f8f092c924c573b4601e81";
     //ACCESS TOKEN REQUEST
+    print("ENTERING LOGIN WITH GITHUN");
     final response = await http.post(
       Uri.parse("https://github.com/login/oauth/access_token"),
       headers: {
@@ -113,12 +114,15 @@ class AuthBloc {
       )),
     );
 
+    print("ENTERING LOGIN WITH GITHUN 2");
     GitHubLoginResponse loginResponse = GitHubLoginResponse.fromJson(json.decode(response.body));
 
     //FIREBASE SIGNIN
-    final auth.AuthCredential credential = auth.GithubAuthProvider.credential(loginResponse.accessToken);
+    print("ENTERING LOGIN WITH GITHUN 3"+loginResponse.accessToken.toString());
+    final AuthCredential credential = GithubAuthProvider.credential(loginResponse.accessToken);
 
     final result = await authService.signInWithCredential(credential);
+    print("Rhea Github Sign In"+result.toString());
 
   }
 

@@ -25,7 +25,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   void initState() {
-    _initDeepLinkListener();
+
     var authBloc = Provider.of<AuthBloc>(context, listen: false);
     loginStateSubscription = authBloc.currentUser.listen((fbUser) {
       if (fbUser != null) {
@@ -36,25 +36,29 @@ class _LoginScreenState extends State<LoginScreen> {
         );
       }
     });
+    _initDeepLinkListener();
     super.initState();
   }
 
   @override
   void dispose() {
+    _disposeDeepLinkListener();
     loginStateSubscription.cancel();
     super.dispose();
   }
 
   void _initDeepLinkListener() async {
     _subs = getLinksStream().listen((String link) {
+
       _checkDeepLink(link);
     }, cancelOnError: true);
   }
 
   void _checkDeepLink(String link) {
-    final authBloc = Provider.of<AuthBloc>(context);
+    final authBloc =  Provider.of<AuthBloc>(context, listen: false);
     if (link != null) {
       String code = link.substring(link.indexOf(RegExp('code=')) + 5);
+      print(code);
       authBloc.loginWithGitHub(code);
 
     }
@@ -63,8 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void onClickGitHubLoginButton() async {
     const String url = "https://github.com/login/oauth/authorize" +
-        "?client_id=" + CLIENT_ID +
-        "&scope=public_repo%20read:user%20user:email";
+        "?client_id=" + CLIENT_ID;
 
     if (await canLaunch(url)) {
 
@@ -76,6 +79,13 @@ class _LoginScreenState extends State<LoginScreen> {
     } else {
 
       print("CANNOT LAUNCH THIS URL!");
+    }
+  }
+
+  void _disposeDeepLinkListener() {
+    if (_subs != null) {
+      _subs.cancel();
+      _subs = null;
     }
   }
 
