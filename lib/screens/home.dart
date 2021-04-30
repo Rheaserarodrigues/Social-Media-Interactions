@@ -79,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       SignInButton(
                           Buttons.GitHub,
                           text: 'Sign Out of Github',
-
+ 
                           onPressed: () => authBloc.logout()
                       ),
                   ],)

@@ -110,11 +110,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 SignInButton(Buttons.Facebook,
                     onPressed: () => authBloc.loginFacebook()),
                 SizedBox(height: 10,),
-                SignInButton(Buttons.Apple,
-                    onPressed: () => {}),
+                Text("Rhea Sera Rodrigues Intern at The Sparks Foundation", style: TextStyle(color: Colors.white),),
+
+                SizedBox(height: 60,),
               ],
             ),
           ),
-        ));
+        )
+    );
   }
 }
