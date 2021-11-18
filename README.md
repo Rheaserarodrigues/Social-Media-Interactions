@@ -1,4 +1,4 @@
-# socialmediainteractions
+# Socialmediainteractions
 
 A new Flutter application.
 
