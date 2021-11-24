@@ -1,6 +1,6 @@
 # Socialmediainteractions
 
-A new Flutter application.
+A Mobile Application developed using Android Studio, Flutter Framework and Dart Programming.Created an authentication system using various autehntication tools to loggin users. and displayed the details of the authenticated users after logged in.Firebase was used for authentication and firestore to store details of the users that were authenticated onto the app.
 
 ## Getting Started
 
